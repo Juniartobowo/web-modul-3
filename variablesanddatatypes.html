@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Variables and Data Types</title>
+  <style>
+    .bluebox {
+      background-color: #3A5795;
+      color: white;
+      height: 100px;
+      width: auto;
+    }
+
+    .yellowbox {
+      background-color: rgb(222, 224, 85);
+      height: 100px;
+      width: auto;
+    }
+
+    .greenbox {
+      background-color: #31af37;
+      height: 100px;
+      width: auto;
+    }
+
+    .great {
+      background-color: #5a3479;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bluebox" id="facebook">
+    <p>
+      Facebook is <span class="great">great</span>.
+    </p>
+  </div>
+
+  <div class="yellowbox" id="apple">
+    <p>Apple.</p>
+  </div>
+
+  <div class="greenbox">
+    <p>Microsoft.</p>
+  </div>
+
+  <button id="button1">Change Facebook style</button>
+  <button id="button2">Change Apple style</button>
+
+  <script>
+    // Variabel dan tipe data
+    var x = 3;
+    console.log(x);
+
+    var y;
+    y = 5;
+
+    var z;
+    console.log("The value of z is " + z); // undefined
+    z = x + y;
+    console.log("The value of z is " + z); // 8
+    console.log("The type of z is: " + typeof(z)); // number
+
+    z = x + " " + y;
+    console.log("The value of z is " + z); // "3 5"
+    console.log("The type of z is " + typeof(z)); // string
+
+    var greeting = "Hello";
+    var firstname = "John";
+    var message = greeting + " " + firstname;
+    console.log("The value of message is: " + message);
+    console.log("The type of message is: " + typeof(message)); // string
+
+    var check = (x == 5);
+    console.log("The value of check is: " + check); // false
+    console.log("The type of check is: " + typeof(check)); // boolean
+
+    var myArray = [1, 2, 3];
+    console.log(myArray); // [1, 2, 3]
+    console.log(typeof(myArray)); // object
+  </script>
+</body>
+</html>

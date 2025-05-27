@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Object Constructors</title>
+</head>
+<body>
+  <p>JavaScript.</p>
+
+  <script>
+    function Phone(make, model, warranty, color) {
+      this.make = make;
+      this.model = model;
+      this.warranty = warranty;
+      this.color = color;
+
+      this.extendWarranty = function(x) {
+        this.warranty += x;
+      };
+    }
+
+    var myPhone = new Phone("Apple", "iPhone 5", 12, "white");
+    console.log(myPhone);
+
+    myPhone.extendWarranty(12);
+    console.log(myPhone.warranty);
+
+    myPhone.condition = "like new";
+    console.log(myPhone);
+    console.log(myPhone.condition);
+
+    var myBrothersPhone = new Phone("Apple", "iPhone 4", 6, "black");
+    console.log(myBrothersPhone);
+    console.log(myBrothersPhone.condition); // undefined before prototype added
+
+    Phone.prototype.condition = "new";
+    console.log(myBrothersPhone.condition); // now gets prototype value
+    console.log(myPhone.condition); // still uses instance property
+  </script>
+</body>
+</html>

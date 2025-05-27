@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Arrays</title>
+</head>
+<body>
+  <p id="myParagraph">JavaScript.</p>
+
+  <script>
+    var shoppingList = ["bread", "eggs", "milk"];
+    // var shoppingList = new Array("bread", "eggs", "milk");
+
+    showResult(shoppingList);
+    showResult(shoppingList[0]);
+    showResult(shoppingList[2]);
+
+    function showResult(x) {
+      document.getElementById("myParagraph").innerHTML += "<br />" + x;
+    }
+
+    // Mengubah item
+    shoppingList[1] = "yogurt";
+    showResult(shoppingList);
+
+    shoppingList[2] = "orange";
+    showResult(shoppingList);
+
+    // Menghapus item (meninggalkan undefined)
+    delete shoppingList[1];
+    showResult(shoppingList);
+
+    // Menambahkan kembali item
+    shoppingList[1] = "yogurt";
+    showResult(shoppingList);
+
+    // Menghapus 1 item mulai dari index 1
+    shoppingList.splice(1, 1);
+    showResult(shoppingList);
+
+    // Menyisipkan item di index 1
+    shoppingList.splice(1, 0, "banana", "apple");
+    showResult(shoppingList);
+
+    // Mengurutkan array
+    shoppingList.sort();
+    showResult(shoppingList);
+
+    // Membalik urutan
+    shoppingList.reverse();
+    showResult(shoppingList);
+
+    // String ke array
+    var myString = 'what is weather like?';
+    var myArray = myString.split(' ', 2);
+    showResult(myArray);
+  </script>
+</body>
+</html>
